@@ -33,7 +33,7 @@ public class Purchase {
         System.out.println("Shopping cart:");
         System.out.println(sum + " $");
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println("\t" + entry.getKey() + " " + entry.getValue() + "unit by price " + (entry.getValue() * prices.get(entry.getKey()) + " $"));
+            System.out.println("\t" + entry.getKey() + " " + entry.getValue() + " unit by price " + (entry.getValue() * prices.get(entry.getKey()) + " $"));
         }
     }
 }

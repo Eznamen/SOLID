@@ -12,7 +12,7 @@ public class Products {
     }
 
 public static void toStringProducts(Map<String, Integer> map) {
-    System.out.println("Product in stock");
+    System.out.println("PRODUCTS:");
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " for " + entry.getValue() + " $/unit");

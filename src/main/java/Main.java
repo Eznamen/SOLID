@@ -23,7 +23,6 @@ public class Main {
             String[] parts = line.split(" ");
             String product = parts[0];
             int count = Integer.parseInt(parts[1]);
-            System.out.println(count);
             map = purchase.addPurchase(product, count, map);
         }
         long sum = purchase.sum(productses, map);
