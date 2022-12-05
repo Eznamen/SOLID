@@ -1,4 +1,3 @@
-
 import java.util.Map;
 
 public class Purchase {
@@ -31,10 +30,10 @@ public class Purchase {
     }
 
     public void toStringSum(long sum, Map<String, Integer> prices, Map<String, Integer> map) {
-        System.out.println("ÊÎĞÇÈÍÀ:");
+        System.out.println("Shopping cart:");
         System.out.println(sum + " $");
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println("\t" + entry.getKey() + " " + entry.getValue() + " øò. â ñóììå " + (entry.getValue() * prices.get(entry.getKey()) + " ğóá."));
+            System.out.println("\t" + entry.getKey() + " " + entry.getValue() + "unit by price " + (entry.getValue() * prices.get(entry.getKey()) + " $"));
         }
     }
 }

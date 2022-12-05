@@ -1,25 +1,21 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        HashMap<String, Integer> products = new HashMap<>();
-        products.put("Хлеб", 56);
-        products.put("Масло", 153);
-        products.put("Колбаса", 211);
-        products.put("Пирожок", 45);
-        long sum;
+        Products products;
         Purchase purchase;
+
+        HashMap<String, Integer> productses = new HashMap<>();
+        products = new Products(productses, "Bread", 56);
+        products = new Products(productses, "Sausage", 211);
+        products = new Products(productses, "Oil", 153);
+        products = new Products(productses, "Pie", 45);
+        Products.toStringProducts(productses);
         Map<String, Integer> map = new HashMap<>();
 
-        System.out.println("В МАГАЗИНЕ В НАЛИЧИИ");
-        for (Map.Entry<String, Integer> productAndPrice : products.entrySet()) {
-            System.out.println(productAndPrice.getKey() + " за " + productAndPrice.getValue() + " руб./шт.");
-        }
         while (true) {
-            System.out.println("Введите два слова: название товара и количество. Или end");
+            System.out.println("Enter two words: product name and count. Or end");
             Scanner scanner = new Scanner(System.in);
             purchase = new Purchase();
             String line = scanner.nextLine();
@@ -30,8 +26,8 @@ public class Main {
             System.out.println(count);
             map = purchase.addPurchase(product, count, map);
         }
-        sum = purchase.sum(products, map);
+        long sum = purchase.sum(productses, map);
 
-        purchase.toStringSum(sum, products, map);
+        purchase.toStringSum(sum, productses, map);
     }
 }
