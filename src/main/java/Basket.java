@@ -14,22 +14,16 @@ public class Basket {
         if (map.get(purchase.getTitle()) == null) {
             map.put(purchase.getTitle(), purchase.getCount());
         } else {
-            if (map.containsKey(purchase.getTitle())) {
-                int ccount = map.get(purchase.getTitle()) + purchase.getCount();
-                map.put(purchase.getTitle(), ccount);
-            }
+            int ccount = map.containsKey(purchase.getTitle()) ? map.get(purchase.getTitle()) + purchase.getCount() : 0;
+            map.put(purchase.getTitle(), ccount);
         }
+
         return map;
     }
 
     public long sum(Map<String, Integer> prices) {
         for (Map.Entry<String, Integer> entry : prices.entrySet()) {
-            entry.getKey();
-            if (map.containsKey(entry.getKey())) {
-                sum = entry.getValue() * map.get(entry.getKey()) + sum;
-            } else {
-                continue;
-            }
+            sum = map.containsKey(entry.getKey()) ? entry.getValue() * map.get(entry.getKey()) + sum : sum;
         }
         return sum;
     }
